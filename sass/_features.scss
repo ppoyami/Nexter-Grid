@@ -1,0 +1,33 @@
+.features {
+  grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // M: auto-fit 만큼 25rem ~ 1fr 만큼의 열을 추가함 -> 25rem 미만이면, 열이 자동으로 줄어든다.
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 6rem;
+  // M: grid item의 세로축 정렬
+  align-items: start;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 1.5rem 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+    // M: row는 암시적으로 생성되기 때문에 -1은 의미가 없다.
+    // grid-row: 1 / -1;
+    transform: translateY(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
+}

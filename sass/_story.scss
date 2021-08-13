@@ -1,0 +1,76 @@
+.story {
+  &__pictures {
+    background-color: $color-primary;
+    grid-column: full-start / col-end 4;
+    // M: 이미지 백 그라운드에 블러처리하기(linear-gradient)
+    background-image: linear-gradient(
+        rgba($color-primary, 0.5),
+        rgba($color-primary, 0.5)
+      ),
+      url(../img/back.jpg);
+    background-size: cover;
+
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1 / -1;
+      padding: 3rem;
+    }
+  }
+  // M: 이미지는 기본적으로 종횡비를 가지고 있기 때문에, 그리드를 채우지 않을 수도 있다.
+  &__img--1 {
+    width: 100%;
+    grid-row: 2 / 6;
+    grid-column: 2 / 6;
+    box-shadow: 0 2rem 5rem rgba(#000, 0.1);
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1 / 5;
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__img--2 {
+    width: 115%;
+    grid-row: 4 / 6;
+    grid-column: 4 / 7;
+    z-index: 20;
+    box-shadow: 0 2rem 5rem rgba(#000, 0.1);
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+      grid-row: 1 / -1;
+    }
+  }
+  &__content {
+    background-color: $color-grey-light-1;
+    grid-column: col-start 5 / full-end;
+
+    // M: padding에 vw를 사용하기(반응형)
+    padding: 6rem 8vw;
+
+    // M: flex box 는 align-items:stratch가 기본이다. axios 축으로 부모요소 만큼 늘어진다.
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: flex-start;
+
+    // M: 그리드는 기본적으로 아이템을 셀 크기만큼 늘려놓는다.(행 축으로 아이템을 정렬)
+    display: grid;
+    align-content: center; // 그리드 자체를 정렬
+    justify-items: start;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-row: 5 / 6;
+      grid-column: 1 / -1;
+    }
+  }
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 4rem;
+  }
+}
