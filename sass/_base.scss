@@ -43,7 +43,8 @@ body {
   font-weight: 300;
   line-height: 1.6;
 }
-// M: column에 이름을 붙이고, column만 신경써서 레이아웃을 잡는다.
+// CODE: column 레이아웃 시스템
+// M: column에 이름을 붙이고, column만 신경써서 레이아웃을 잡는다.(여백 column을 양쪽에 추가해서 가운데 정렬이 가능)
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
@@ -53,6 +54,7 @@ body {
     [center-end] minmax(6rem, 1fr)
     [full-end];
 
+  //CODE: 그리드 반응형 팁: 열을 삭제하고, 행을 추가하는 방식
   // M: 열을 하나 제거하고, row를 추가. 만약 line naming을 하지 않았다면, 모든 그리드의 행열 번호가 바뀌게 될 것!
   @media only screen and (max-width: $bp-large) {
     grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);

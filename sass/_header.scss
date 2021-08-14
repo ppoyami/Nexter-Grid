@@ -31,6 +31,7 @@
     height: 3rem;
     justify-self: center;
   }
+  // CODE: 텍스트, 가상 선택자도 그리드 요소가 될 수 있다.
   // M: 텍스트 가상 선택자도 그리드 요소가 될 수 있다.
   &__seenon-text {
     display: grid;

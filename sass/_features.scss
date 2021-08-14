@@ -5,6 +5,7 @@
 
   display: grid;
   // grid-template-columns: repeat(3, 1fr);
+  // CODE: 그리드 반응형 팁: auto-fit으로 자동으로 row가 추가되게 만들어라.
   // M: auto-fit 만큼 25rem ~ 1fr 만큼의 열을 추가함 -> 25rem 미만이면, 열이 자동으로 줄어든다.
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 6rem;
@@ -16,7 +17,7 @@
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 1.5rem 2.5rem;
-
+  // CODE: 암시적 행에서는 -1 사용 불가! 마이크로한 디자인
   &__icon {
     fill: $color-primary;
     width: 4.5rem;

@@ -79,6 +79,7 @@
       grid-column: 8 / -1;
     }
   }
+  // CODE: img 태그에서의 이미지 크기 관리(object-fit)
   // M: width, height 모두 수동으로 해주어야만, object-fit이 작동한다.
   &__img {
     width: 100%;
